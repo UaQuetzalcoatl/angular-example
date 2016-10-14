@@ -1,0 +1,54 @@
+<div layout="vertical" layout-fill>
+
+  <md-content>
+    <header>
+      Header
+    </header>
+
+    <section class="jumbotron">
+      <h1>'Allo, 'Allo!</h1>
+      <m jb
+      <p class="lead">
+        <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
+        Always a pleasure scaffolding your apps.
+      </p>
+      <p>
+        With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
+      </p>
+    </section>
+
+    <div class="techs" layout-align="center">
+      <md-card ng-repeat="user in vm.getUsers() | orderBy:'lastName'">
+        <md-card-content>
+          <h3 class="md-display-1">{{ user.getFullName() }}</h3>
+          <div ng-if="user.isShowed">
+            <md-icon
+              md-svg-src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g id="add-shopping-cart"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.86-7.01L19.42 4h-.01l-1.1 2-2.76 5H8.53l-.13-.27L6.16 6l-.95-2-.94-2H1v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.13 0-.25-.11-.25-.25z"/></g></svg>'
+              class="s48"
+              aria-label="Cart">
+            </md-icon>
+            <h3 style="color: coral;" class="md-subhead">I've already seen this user's details</h3>
+          </div>
+
+          <p>This is the element number{{ $index + 1 }}</p>
+        </md-card-content>
+        <div class="md-action-buttons">
+          <md-button class="md-primary" ng-click="vm.showUserDetails(user)">Show Details</md-button>
+        </div>
+      </md-card>
+    </div>
+
+    <md-list flex>
+      <md-subheader class="md-no-sticky"> ВАЖНО! что сделать </md-subheader>
+      <md-list-item class="md-3-line"
+        ng-repeat="item in ['во всплывашем окне отобразить инфу пользователя', 'при клике на корзину сообщение исчезает']"
+        ng-click="null">
+        <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
+        <div class="md-list-item-text" layout="column">
+          {{item}}
+        </div>
+      </md-list-item>
+    </md-list>
+  </md-content>
+
+</div>
